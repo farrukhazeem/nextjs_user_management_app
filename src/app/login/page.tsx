@@ -21,7 +21,6 @@ export default function LoginPage() {
             const login_url = `${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`
             const response = await axios.post(login_url, user);
             const { status, data } = response;
-
             if (status === 200) {
                 const { user, token } = data;
                 localStorage.setItem("auth", token);
